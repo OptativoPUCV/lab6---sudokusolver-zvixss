@@ -43,7 +43,72 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_valid(Node* n)
+{
+   int fila [10]; int columna [10]; int aux [10];
+
+   for (int i = 0; i < 9; i++)
+      {
+         for (int k = 0; k < 10; k++)
+            {
+               fila[k] = 0;
+               columna [k] = 0;
+            }
+         for (int k = 0; k < 9; k++)
+            {
+               int num_fila = n -> sudo [i][k];
+               
+               if (num_fila != 0)
+               {
+                  if (fila[num_fila] == 1)
+                  {
+                     return 0;
+                  }
+                  else
+                  {
+                     fila [num_fila] = 1;
+                  }
+               }
+
+               int nColumna = n -> sudo[k][i];
+
+               if (nColumna != 0)
+               {
+                  return 0;
+               }
+               else
+               {
+                  columna[nColumna] = 1;
+               }
+            }
+      }
+
+   for (int i = 0; i < 9; i++)
+      {
+         for (int k = 0; k < 10; k++)
+            {
+               aux[k] = 0;
+            }
+
+         for (int k = 0; k < 9; k++)
+            {
+               int q = 3 * (i / 3) + (k / 3);
+               int w = 3 * (i % 3) + (k % 3);
+               int nAux = n -> sudo[q][w];
+
+               if (nAux != 0)
+               {
+                  if (aux[nAux] == 1)
+                  {
+                     return 0;
+                  }
+                  else
+                  {
+                     aux[nAux] = 1;
+                  }
+               }
+            }
+      }
 
     return 1;
 }
