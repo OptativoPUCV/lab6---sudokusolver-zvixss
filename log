@@ -109,3 +109,14 @@ Sun 19 May 2024 03:12:23 AM UTC:
  tests:  5|3
 total_score: 35/70
 9c14b6b
+Sun 19 May 2024 03:14:04 AM UTC: 
+ sudoku.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:181:16: error: unused variable ‘aux’ [-Werror=unused-variable]
+  181 |          Node* aux = first(adj);
+      |                ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+48509be
