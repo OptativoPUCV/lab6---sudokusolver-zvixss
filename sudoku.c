@@ -77,14 +77,11 @@ int is_valid(Node* n)
 
                if (nColumna != 0)
                {
-                  if (columna[nColumna] == 1);
-                  {
-                     return 0;
-                  }
-                  else
-                  {
-                     columna[nColumna] = 1;
-                  }
+                  return 0;
+               }
+               else
+               {
+                  columna[nColumna] = 1;
                }
             }
       }
