@@ -177,7 +177,7 @@ Node* DFS(Node* initial, int* cont)
             return current;
          }
          
-        /* List* adj = get_adj_nodes(current);
+         List* adj = get_adj_nodes(current);
          Node* aux = first(adj);
 
          while (aux != NULL)
